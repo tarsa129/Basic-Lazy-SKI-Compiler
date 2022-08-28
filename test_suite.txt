@@ -1,0 +1,55 @@
+true -> true
+false -> false
+129 -> 129
+err -> err
+add1 129 -> 130
+add1 true -> err
+add1 err -> err
+sub1 129 -> 128
+sub1 true -> err
+sub1 err -> err
+plus 1 128 -> 129
+plus true 1 -> err
+plus 1 true -> err
+plus err err -> err
+eq 129 129 -> true
+eq 128 129 -> false
+eq true false -> false
+eq true true -> true 
+eq false false -> true
+eq err 128 -> err
+eq 128 err -> err
+cond false 128 1 -> 1
+cond true 128 1 -> 128
+cond (eq (sub1 129) (add1 129) ) false true -> true
+cond true 128 err -> 128
+cond 128 true false -> err
+cond err true false -> err
+cond (eq 128 err) true false -> err
+(cond true add1 sub1) 128 -> 129
+K 129 err -> 129
+K err 129 -> err
+I 129 -> 129
+I true -> true 
+I err -> err
+I (K 129 err) -> 129
+I (K err 129) -> err
+{ [x y] x } 128 err -> 128
+{ [x y] y } err 128 -> 128
+{ [x y] x } (add1 128) (cond 24 true false) -> 129
+S (S (K plus) (K 1)) I ( K 129 err ) -> 130
+S (S (K plus) (K 1)) I ( K err err ) -> err
+S (S (K plus) (K 1)) I ( K err 129 ) -> err
+S (S (K plus) (K 1)) I ( { [x y] x} 129 err ) -> 130
+{ [x] cond x sub1 add1} true 129 -> 128
+{ [x] cond (eq false x) { [y] plus 1 y } {[y] plus 2 y} } false 129 -> 130
+{ [x] cond (eq false x) { [y] plus 1 y } {[y] plus 2 y} } true 129 -> 131
+{ [x] cond (eq 128 x) { [y] plus x y } {[y] eq x y} } 128 129 -> 257
+{ [x] cond (eq 128 x) { [y] plus x y } {[y] eq x y} } 129 129 -> true
+{ [x] cond (eq 128 x) { [y] plus x y } {[y] eq x y} } 127 129 -> false
+{ [x y] plus x y} 128 1 -> 129
+{ [x] plus x ({[x] x } 20)  } 2 -> 22
+S (S (K plus) (K 1)) I ({ [x y] x } 128 err) -> 129
+{ [x] plus 1 x } ({ [x y] x } 128 err) -> 129
+{ [x] {[y] plus x y} 1 } ( {[w z] z} err 12 ) -> 13
+{ [x] { [y] { [z] plus x (plus y z) } 1 } 2 } 3 -> 6
