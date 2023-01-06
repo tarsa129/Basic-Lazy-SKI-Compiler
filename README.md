@@ -1,6 +1,6 @@
 # Compilers Class Final Project - Lazy SKI Compiler
 
-This project aims to build a simple lazy SKI compiler, done as a final project for a copmiler class. The language is technically turing complete, but it is not practical for any purpose. 
+This project aims to build a simple lazy SKI compiler, done as a final project for a compilers class. The language is technically turing complete, but it is not practical for any purpose. 
 
 ## Language Overview
 The language is a purely applicative language, meaning that there are no side effects like input/output. It also features lazy evaluation. The syntax consists of S, K, I, B, and C combinators as defined in the paper, various primitives, integers and booleans as basic data types, a single, generic error, and anonymous functions with single character variables. The following primitives are included:
