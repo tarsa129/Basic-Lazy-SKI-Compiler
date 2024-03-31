@@ -1,17 +1,13 @@
 # Compilers Class Final Project - Lazy SKI Compiler
 
-This project aims to build a simple lazy SKI compiler, done as a final project for a compilers class. The language is technically turing complete, but it is not practical for any purpose. 
+This project aims to build a simple lazy SKI compiler, done as a final project for a compilers class.
 
 ## Language Overview
-The language is a purely applicative language, meaning that there are no side effects like input/output. It also features lazy evaluation. The syntax consists of S, K, I, B, and C combinators as defined in the paper, various primitives, integers and booleans as basic data types, a single, generic error, and anonymous functions with single character variables. The following primitives are included:
-* plus x y → x + y
-** x and y must be integers.
-* add1 x → x + 1
-** x must be an integer.
-* sub1 x → x - 1
-** x must be an integer.
-* eq x y → (x == y)
-** x and y must either both be integers or both be booleans.
+The language is a purely applicative language, meaning that there are no side effects like input/output. It also features lazy evaluation. The syntax consists of S, K, I, B, and C combinators, various primitives, integers and booleans as basic data types, a single, generic error, and anonymous functions with single character variables. The following primitives are included:
+* plus x y → x + y (x and y must be integers).
+* add1 x → x + 1 (x must be an integer).
+* sub1 x → x - 1 (x must be an integer).
+* eq x y → (x == y) (x and y must either both be integers or both be booleans.)
 * cond x y z
 ** If x evaluates to “true”, then cond x y z → y
 ** If x evaluates to “false”, then cond x y z → z
